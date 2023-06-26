@@ -1,0 +1,1046 @@
+{
+  "_help_parse": "Options affecting listfile parsing",
+  "parse": {
+    "_help_additional_commands": [
+      "Specify structure for custom cmake functions"
+    ],
+    "additional_commands": {
+      "cg_generate_library_api_header": {
+        "pargs": {
+          "nargs": "*",
+          "flags": []
+        },
+        "kwargs": {
+          "MACRO_PREFIX": 1,
+          "REL_OUTPUT_DIR": 1,
+          "FILE_NAME": 1,
+          "INSTALL_SRC_VAR": 1,
+          "INSTALL_DEST_VAR": 1
+        }
+      },
+      "cg_set_compiler_cache_options": {
+        "pargs": {
+          "nargs": "*",
+          "flags": []
+        },
+        "kwargs": {
+          "SWITCH": 1
+        }
+      },
+      "cg_set_compiler_cache": {
+        "pargs": {
+          "nargs": "1+",
+          "flags": []
+        },
+        "kwargs": {
+          "SWITCH": 1
+        }
+      },
+      "cg_assert_out_of_source_build": {
+        "pargs": {
+          "nargs": 0
+        }
+      },
+      "cg_overwrite_if_undef_var": {
+        "pargs": {
+          "nargs": 3
+        }
+      },
+      "cg_sync_with_cache_var": {
+        "pargs": {
+          "nargs": 4
+        }
+      },
+      "cg_overwrite_if_undef": {
+        "pargs": {
+          "nargs": 2
+        }
+      },
+      "cg_overwrite_if_empty": {
+        "pargs": {
+          "nargs": 2
+        }
+      },
+      "cg_assert_args": {
+        "pargs": {
+          "nargs": "1+",
+          "flags": [
+            "ALLOW_UNPARSED_ARGS"
+          ]
+        },
+        "kwargs": {
+          "REQS": "+",
+          "OPTS": "+"
+        }
+      },
+      "cg_assert_not_empty": {
+        "pargs": {
+          "nargs": 0
+        }
+      },
+      "cg_assert_defined": {
+        "pargs": {
+          "nargs": 0
+        }
+      },
+      "cg_set_default_configuration": {
+        "pargs": {
+          "nargs": 1
+        }
+      },
+      "cg_check_general_modules_version": {
+        "pargs": {
+          "nargs": 0
+        }
+      },
+      "cg_get_all_targets": {
+        "pargs": {
+          "nargs": "1+",
+          "flags": []
+        },
+        "kwargs": {
+          "DIR": 1
+        }
+      },
+      "cg_set_cpp_standard_cache_options": {
+        "pargs": {
+          "nargs": "*",
+          "flags": []
+        },
+        "kwargs": {
+          "CXX_STDLIB": 1
+        }
+      },
+      "cg_get_cpp_standard_lib": {
+        "pargs": {
+          "nargs": 1
+        }
+      },
+      "cg_set_cpp_standards": {
+        "pargs": {
+          "nargs": "1+",
+          "flags": []
+        },
+        "kwargs": {
+          "SCOPE": 1,
+          "CXX_STANDARD": 1,
+          "EXPORT_COMPILE_COMMANDS": 1,
+          "SYMBOL_VISIBILITY_HIDDEN": 1
+        }
+      },
+      "cg_setup_conan": {
+        "pargs": {
+          "nargs": "*",
+          "flags": []
+        },
+        "kwargs": {
+          "INSTALL_DIR": 1,
+          "QUIET": 1,
+          "MIN_VERSION": "+"
+        }
+      },
+      "cg_autodetect_conan_settings": {
+        "pargs": {
+          "nargs": "1+",
+          "flags": []
+        },
+        "kwargs": {}
+      },
+      "cg_set_coverage": {
+        "pargs": {
+          "nargs": "1+",
+          "flags": []
+        },
+        "kwargs": {
+          "SWITCH": 1,
+          "SCOPE": 1
+        }
+      },
+      "cg_define_link_libraries": {
+        "pargs": {
+          "nargs": "1+",
+          "flags": []
+        },
+        "kwargs": {
+          "PUBLIC_LIBRARIES": "+",
+          "INTERFACE_LIBRARIES": "+",
+          "PRIVATE_LIBRARIES": "+"
+        }
+      },
+      "cg_set_link_libraries": {
+        "pargs": {
+          "nargs": "2+",
+          "flags": []
+        },
+        "kwargs": {}
+      },
+      "cg_format_files": {
+        "pargs": {
+          "nargs": "1+",
+          "flags": []
+        },
+        "kwargs": {
+          "FILES": "+"
+        }
+      },
+      "cg_run_git": {
+        "pargs": {
+          "nargs": "*",
+          "flags": []
+        },
+        "kwargs": {
+          "OUTPUT_VAR": 1,
+          "EXIT_CODE_VAR": 1,
+          "NON_FATAL": 1,
+          "WORKING_DIR": 1
+        }
+      },
+      "cg_get_git_state_variable_names": {
+        "pargs": {
+          "nargs": 1
+        }
+      },
+      "cg_get_git_state": {
+        "pargs": {
+          "nargs": "1+",
+          "flags": []
+        },
+        "kwargs": {
+          "WORKING_DIR": 1,
+          "TAG_PATTERN": 1,
+          "VERSION_REGEX": 1,
+          "NON_FATAL": 1,
+          "ONLY_DESCRIBE": 1,
+          "VERSION_REQUIRED": 1
+        }
+      },
+      "cg_print_git_state": {
+        "pargs": {
+          "nargs": "1+",
+          "flags": []
+        },
+        "kwargs": {
+          "FULL": 1
+        }
+      },
+      "cg_enable_git_version_info": {
+        "pargs": {
+          "nargs": "*",
+          "flags": []
+        },
+        "kwargs": {
+          "WORKING_DIR": 1,
+          "STATE_FILE": 1,
+          "CONFIGURE_TEMPLATE": 1,
+          "CONFIGURE_OUTPUT": 1,
+          "TAG_PATTERN": 1,
+          "VERSION_REGEX": 1,
+          "VERBOSE": 1,
+          "VERSION_VAR": 1,
+          "VERSION_REQUIRED": 1,
+          "GIT_STATE_NON_FATAL": 1
+        }
+      },
+      "cg_configure_cgo": {
+        "pargs": {
+          "nargs": "1+",
+          "flags": []
+        },
+        "kwargs": {
+          "OUTPUT_DIR": 1,
+          "TARGET_FLAGS": 1,
+          "DEPENDING_TARGETS": 1,
+          "TEMPLATE_FILES": "+"
+        }
+      },
+      "cg_set_common_install_options": {
+        "pargs": {
+          "nargs": "*",
+          "flags": []
+        },
+        "kwargs": {
+          "PREFIX": 1
+        }
+      },
+      "cg_set_export_settings": {
+        "pargs": {
+          "nargs": "1+",
+          "flags": []
+        },
+        "kwargs": {
+          "VERSION": 1,
+          "NAME": 1
+        }
+      },
+      "cg_install_package_version_file": {
+        "pargs": {
+          "nargs": "3+",
+          "flags": []
+        },
+        "kwargs": {
+          "COMPATIBILITY": 1,
+          "COMPONENT": 1
+        }
+      },
+      "cg_install_package_config_file": {
+        "pargs": {
+          "nargs": "2+",
+          "flags": []
+        },
+        "kwargs": {
+          "COMPONENT": 1
+        }
+      },
+      "cg_get_library_install_dirs": {
+        "pargs": {
+          "nargs": "1+",
+          "flags": []
+        },
+        "kwargs": {
+          "RUNTIME_DIR_VAR": 1,
+          "LIBRARY_DIR_VAR": 1,
+          "ARCHIVE_DIR_VAR": 1,
+          "FRAMEWORK_DIR_VAR": 1,
+          "INCLUDE_DIR_VAR": 1,
+          "CMAKE_CONFIG_DIR_VAR": 1,
+          "ADD_FILES_DIR_VAR": 1
+        }
+      },
+      "cg_get_executable_install_dirs": {
+        "pargs": {
+          "nargs": 2
+        }
+      },
+      "cg_install_library": {
+        "pargs": {
+          "nargs": "1+",
+          "flags": []
+        },
+        "kwargs": {
+          "LIBRARY_NAME": 1,
+          "COMPONENT_NAME": 1,
+          "LIBRARY_DIR": 1,
+          "CMAKE_CONFIG_DIR": 1
+        }
+      },
+      "cg_install_executable": {
+        "pargs": {
+          "nargs": "1+",
+          "flags": []
+        },
+        "kwargs": {
+          "RUNTIME_DIR": 1
+        }
+      },
+      "cg_install_files": {
+        "pargs": {
+          "nargs": "*",
+          "flags": []
+        },
+        "kwargs": {
+          "COMPONENT": 1,
+          "SOURCES": "+",
+          "DESTINATIONS": "+"
+        }
+      },
+      "cg_define_rpath_settings": {
+        "pargs": {
+          "nargs": "1+",
+          "flags": []
+        },
+        "kwargs": {
+          "BUILD_WITH_INSTALL_RPATH": 1,
+          "INSTALL_RPATH_USE_LINK_PATH": 1,
+          "SKIP_BUILD_RPATH": 1,
+          "MACOSX_RPATH": 1,
+          "ADD_RPATH_IF_NO_SYSTEM_DIR": 1,
+          "INSTALL_RPATH": "+"
+        }
+      },
+      "cg_set_default_library_settings": {
+        "pargs": {
+          "nargs": "*",
+          "flags": []
+        },
+        "kwargs": {
+          "BUILD_SHARED_LIBS": 1,
+          "BUILD_SHARED_LIBS_PIC": 1
+        }
+      },
+      "cg_set_linktime_optimization_cache_options": {
+        "pargs": {
+          "nargs": "*",
+          "flags": []
+        },
+        "kwargs": {
+          "SWITCH": 1
+        }
+      },
+      "cg_set_linktime_optimization": {
+        "pargs": {
+          "nargs": "1+",
+          "flags": []
+        },
+        "kwargs": {
+          "SWITCH": 1
+        }
+      },
+      "cg_set_linter_cache_options": {
+        "pargs": {
+          "nargs": "*",
+          "flags": []
+        },
+        "kwargs": {
+          "CPP_CHECK": 1,
+          "CLANG_TIDY": 1,
+          "INCLUDE_WHAT_YOU_USE": 1
+        }
+      },
+      "cg_set_linters": {
+        "pargs": {
+          "nargs": "1+",
+          "flags": []
+        },
+        "kwargs": {
+          "CPP_CHECK": 1,
+          "CLANG_TIDY": 1,
+          "INCLUDE_WHAT_YOU_USE": 1,
+          "WARNING_AS_ERROR": 1
+        }
+      },
+      "cg_message": {
+        "pargs": {
+          "nargs": 1
+        }
+      },
+      "cg_print_list": {
+        "pargs": {
+          "nargs": "1+",
+          "flags": [
+            "VERTICAL"
+          ]
+        },
+        "kwargs": {
+          "TITLE": 1,
+          "INDENT": 1
+        }
+      },
+      "cg_print_target_properties": {
+        "pargs": {
+          "nargs": 0
+        }
+      },
+      "cg_print_all_targets": {
+        "pargs": {
+          "nargs": "1+",
+          "flags": []
+        },
+        "kwargs": {
+          "DIR": 1
+        }
+      },
+      "cg_set_output_dir": {
+        "pargs": {
+          "nargs": "1+",
+          "flags": []
+        },
+        "kwargs": {
+          "OUTPUT_DIR": 1,
+          "POST_DIR": 1,
+          "DEBUG_POSTFIX": 1
+        }
+      },
+      "cg_set_common_output_dir": {
+        "pargs": {
+          "nargs": "*",
+          "flags": []
+        },
+        "kwargs": {
+          "OUTPUT_DIR": 1,
+          "DEBUG_POSTFIX": 1
+        }
+      },
+      "cg_set_sanitizer_cache_options": {
+        "pargs": {
+          "nargs": "*",
+          "flags": []
+        },
+        "kwargs": {
+          "ADDRESS_SAN": 1,
+          "LEAK_SAN": 1,
+          "UNDEF_BEHAVIOR_SAN": 1,
+          "UNDEF_BEHAVIOR_SAN_NO_RECOVER": 1,
+          "THREAD_SAN": 1,
+          "MEMORY_SAN": 1
+        }
+      },
+      "cg_set_sanitizers": {
+        "pargs": {
+          "nargs": "1+",
+          "flags": []
+        },
+        "kwargs": {
+          "ADDRESS_SAN": 1,
+          "LEAK_SAN": 1,
+          "UNDEF_BEHAVIOR_SAN": 1,
+          "UNDEF_BEHAVIOR_SAN_NO_RECOVER": 1,
+          "THREAD_SAN": 1,
+          "MEMORY_SAN": 1,
+          "SCOPE": 1,
+          "CONFIGS": "+"
+        }
+      },
+      "cg_get_target_base_name": {
+        "pargs": {
+          "nargs": "2+",
+          "flags": []
+        },
+        "kwargs": {
+          "SRC_DIR_VAR": 1,
+          "REL_DIR_VAR": 1
+        }
+      },
+      "cg_define_sources": {
+        "pargs": {
+          "nargs": "1+",
+          "flags": []
+        },
+        "kwargs": {
+          "SOURCES": "+",
+          "PRECOMPILED_HEADERS": "+",
+          "ADD_INCLUDE_DIRS_PUBLIC": "+",
+          "ADD_INCLUDE_DIRS_PRIVATE": "+"
+        }
+      },
+      "cg_set_source_check_cache_options": {
+        "pargs": {
+          "nargs": "*",
+          "flags": []
+        },
+        "kwargs": {
+          "INCLUDE_CHECK": 1,
+          "INCLUDE_CHECK_ONLY_SEPERATE": 1
+        }
+      },
+      "cg_set_sources": {
+        "pargs": {
+          "nargs": "2+",
+          "flags": []
+        },
+        "kwargs": {
+          "INCLUDE_DIR_FROM_SRC": 1,
+          "INCLUDE_DIR": 1,
+          "CONFIGURE_DIR": 1,
+          "ALLOW_NO_INCLUDE_PREFIX": 1,
+          "INCLUDE_CHECK": 1,
+          "INCLUDE_CHECK_ONLY_SEPERATE": 1,
+          "FORMAT": 1,
+          "INTERNAL_TEST_SOURCES": 1,
+          "PRIVATE_INCLUDE_PREFIXES": "+"
+        }
+      },
+      "cg_set_test_sources": {
+        "pargs": {
+          "nargs": 2
+        }
+      },
+      "cg_setup_include_checks": {
+        "pargs": {
+          "nargs": "*",
+          "flags": []
+        },
+        "kwargs": {
+          "ROOT_INCLUDE_PREFIX": 1
+        }
+      },
+      "cg_check_includes": {
+        "pargs": {
+          "nargs": "1+",
+          "flags": []
+        },
+        "kwargs": {
+          "INCLUDE_CHECK_ONLY_SEPERATE": 1,
+          "PRIVATE_INCLUDE_PREFIXES": "+",
+          "FILES": "+"
+        }
+      },
+      "cg_try_load_toolchain": {
+        "pargs": {
+          "nargs": 0
+        }
+      },
+      "cg_set_warning_cache_options": {
+        "pargs": {
+          "nargs": "*",
+          "flags": []
+        },
+        "kwargs": {
+          "WARNING_AS_ERROR": 1
+        }
+      },
+      "cg_set_warnings": {
+        "pargs": {
+          "nargs": "1+",
+          "flags": []
+        },
+        "kwargs": {
+          "WARNING_AS_ERROR": 1,
+          "SCOPE": 1
+        }
+      },
+      "conan_cmake_settings": {
+        "pargs": {
+          "nargs": 1
+        }
+      },
+      "conan_cmake_detect_unix_libcxx": {
+        "pargs": {
+          "nargs": 1
+        }
+      },
+      "conan_cmake_detect_vs_runtime": {
+        "pargs": {
+          "nargs": 1
+        }
+      },
+      "conan_cmake_autodetect": {
+        "pargs": {
+          "nargs": 1
+        }
+      },
+      "conan_parse_arguments": {
+        "pargs": {
+          "nargs": "*",
+          "flags": [
+            "BASIC_SETUP",
+            "CMAKE_TARGETS",
+            "UPDATE",
+            "KEEP_RPATHS",
+            "NO_LOAD",
+            "NO_OUTPUT_DIRS",
+            "OUTPUT_QUIET",
+            "NO_IMPORTS",
+            "SKIP_STD"
+          ]
+        },
+        "kwargs": {
+          "CONANFILE": 1,
+          "ARCH": 1,
+          "BUILD_TYPE": 1,
+          "INSTALL_FOLDER": 1,
+          "CONAN_COMMAND": 1,
+          "DEBUG_PROFILE": "+",
+          "RELEASE_PROFILE": "+",
+          "RELWITHDEBINFO_PROFILE": "+",
+          "MINSIZEREL_PROFILE": "+",
+          "PROFILE": "+",
+          "REQUIRES": "+",
+          "OPTIONS": "+",
+          "IMPORTS": "+",
+          "SETTINGS": "+",
+          "BUILD": "+",
+          "ENV": "+",
+          "GENERATORS": "+",
+          "PROFILE_AUTO": "+",
+          "INSTALL_ARGS": "+",
+          "CONFIGURATION_TYPES": "+",
+          "PROFILE_BUILD": "+",
+          "BUILD_REQUIRES": "+"
+        }
+      },
+      "old_conan_cmake_install": {
+        "pargs": {
+          "nargs": 0
+        }
+      },
+      "conan_cmake_install": {
+        "pargs": {
+          "nargs": "*",
+          "flags": [
+            "UPDATE",
+            "NO_IMPORTS",
+            "OUTPUT_QUIET",
+            "ERROR_QUIET"
+          ]
+        },
+        "kwargs": {
+          "PATH_OR_REFERENCE": 1,
+          "REFERENCE": 1,
+          "REMOTE": 1,
+          "LOCKFILE": 1,
+          "LOCKFILE_OUT": 1,
+          "LOCKFILE_NODE_ID": 1,
+          "INSTALL_FOLDER": 1,
+          "GENERATOR": "+",
+          "BUILD": "+",
+          "ENV": "+",
+          "ENV_HOST": "+",
+          "ENV_BUILD": "+",
+          "OPTIONS_HOST": "+",
+          "OPTIONS": "+",
+          "OPTIONS_BUILD": "+",
+          "PROFILE": "+",
+          "PROFILE_HOST": "+",
+          "PROFILE_BUILD": "+",
+          "SETTINGS": "+",
+          "SETTINGS_HOST": "+",
+          "SETTINGS_BUILD": "+"
+        }
+      },
+      "conan_cmake_setup_conanfile": {
+        "pargs": {
+          "nargs": 0
+        }
+      },
+      "conan_cmake_configure": {
+        "pargs": {
+          "nargs": 0
+        }
+      },
+      "conan_cmake_generate_conanfile": {
+        "pargs": {
+          "nargs": 1
+        }
+      },
+      "conan_load_buildinfo": {
+        "pargs": {
+          "nargs": 0
+        }
+      },
+      "conan_cmake_run": {
+        "pargs": {
+          "nargs": 0
+        }
+      },
+      "conan_check": {
+        "pargs": {
+          "nargs": "*",
+          "flags": [
+            "REQUIRED",
+            "DETECT_QUIET"
+          ]
+        },
+        "kwargs": {
+          "VERSION": 1
+        }
+      },
+      "conan_add_remote": {
+        "pargs": {
+          "nargs": "*",
+          "flags": []
+        },
+        "kwargs": {
+          "URL": 1,
+          "NAME": 1,
+          "INDEX": 1,
+          "COMMAND": 1,
+          "VERIFY_SSL": 1
+        }
+      },
+      "conan_config_install": {
+        "pargs": {
+          "nargs": "*",
+          "flags": []
+        },
+        "kwargs": {
+          "ITEM": 1,
+          "TYPE": 1,
+          "SOURCE": 1,
+          "TARGET": 1,
+          "VERIFY_SSL": 1,
+          "ARGS": "+"
+        }
+      }
+    },
+    "_help_override_spec": [
+      "Override configurations per-command where available"
+    ],
+    "override_spec": {},
+    "_help_vartags": [
+      "Specify variable tags."
+    ],
+    "vartags": [],
+    "_help_proptags": [
+      "Specify property tags."
+    ],
+    "proptags": []
+  },
+  "_help_format": "Options affecting formatting.",
+  "format": {
+    "_help_disable": [
+      "Disable formatting entirely, making cmake-format a no-op"
+    ],
+    "disable": false,
+    "_help_line_width": [
+      "How wide to allow formatted cmake files"
+    ],
+    "line_width": 79,
+    "_help_tab_size": [
+      "How many spaces to tab for indent"
+    ],
+    "tab_size": 2,
+    "_help_use_tabchars": [
+      "If true, lines are indented using tab characters (utf-8",
+      "0x09) instead of <tab_size> space characters (utf-8 0x20).",
+      "In cases where the layout would require a fractional tab",
+      "character, the behavior of the  fractional indentation is",
+      "governed by <fractional_tab_policy>"
+    ],
+    "use_tabchars": false,
+    "_help_fractional_tab_policy": [
+      "If <use_tabchars> is True, then the value of this variable",
+      "indicates how fractional indentions are handled during",
+      "whitespace replacement. If set to 'use-space', fractional",
+      "indentation is left as spaces (utf-8 0x20). If set to",
+      "`round-up` fractional indentation is replaced with a single",
+      "tab character (utf-8 0x09) effectively shifting the column",
+      "to the next tabstop"
+    ],
+    "fractional_tab_policy": "use-space",
+    "_help_max_subgroups_hwrap": [
+      "If an argument group contains more than this many sub-groups",
+      "(parg or kwarg groups) then force it to a vertical layout."
+    ],
+    "max_subgroups_hwrap": 4,
+    "_help_max_pargs_hwrap": [
+      "If a positional argument group contains more than this many",
+      "arguments, then force it to a vertical layout."
+    ],
+    "max_pargs_hwrap": 4,
+    "_help_max_rows_cmdline": [
+      "If a cmdline positional group consumes more than this many",
+      "lines without nesting, then invalidate the layout (and nest)"
+    ],
+    "max_rows_cmdline": 2,
+    "_help_separate_ctrl_name_with_space": [
+      "If true, separate flow control names from their parentheses",
+      "with a space"
+    ],
+    "separate_ctrl_name_with_space": false,
+    "_help_separate_fn_name_with_space": [
+      "If true, separate function names from parentheses with a",
+      "space"
+    ],
+    "separate_fn_name_with_space": false,
+    "_help_dangle_parens": [
+      "If a statement is wrapped to more than one line, than dangle",
+      "the closing parenthesis on its own line."
+    ],
+    "dangle_parens": false,
+    "_help_dangle_align": [
+      "If the trailing parenthesis must be 'dangled' on its on",
+      "line, then align it to this reference: `prefix`: the start",
+      "of the statement,  `prefix-indent`: the start of the",
+      "statement, plus one indentation  level, `child`: align to",
+      "the column of the arguments"
+    ],
+    "dangle_align": "prefix",
+    "_help_min_prefix_chars": [
+      "If the statement spelling length (including space and",
+      "parenthesis) is smaller than this amount, then force reject",
+      "nested layouts."
+    ],
+    "min_prefix_chars": 4,
+    "_help_max_prefix_chars": [
+      "If the statement spelling length (including space and",
+      "parenthesis) is larger than the tab width by more than this",
+      "amount, then force reject un-nested layouts."
+    ],
+    "max_prefix_chars": 10,
+    "_help_max_lines_hwrap": [
+      "If a candidate layout is wrapped horizontally but it exceeds",
+      "this many lines, then reject the layout."
+    ],
+    "max_lines_hwrap": 2,
+    "_help_line_ending": [
+      "What style line endings to use in the output."
+    ],
+    "line_ending": "unix",
+    "_help_command_case": [
+      "Format command names consistently as 'lower' or 'upper' case"
+    ],
+    "command_case": "lower",
+    "_help_keyword_case": [
+      "Format keywords consistently as 'lower' or 'upper' case"
+    ],
+    "keyword_case": "upper",
+    "_help_always_wrap": [
+      "A list of command names which should always be wrapped"
+    ],
+    "always_wrap": [],
+    "_help_enable_sort": [
+      "If true, the argument lists which are known to be sortable",
+      "will be sorted lexicographicall"
+    ],
+    "enable_sort": true,
+    "_help_autosort": [
+      "If true, the parsers may infer whether or not an argument",
+      "list is sortable (without annotation)."
+    ],
+    "autosort": true,
+    "_help_require_valid_layout": [
+      "By default, if cmake-format cannot successfully fit",
+      "everything into the desired linewidth it will apply the",
+      "last, most agressive attempt that it made. If this flag is",
+      "True, however, cmake-format will print error, exit with non-",
+      "zero status code, and write-out nothing"
+    ],
+    "require_valid_layout": false,
+    "_help_layout_passes": [
+      "A dictionary mapping layout nodes to a list of wrap",
+      "decisions. See the documentation for more information."
+    ],
+    "layout_passes": {}
+  },
+  "_help_markup": "Options affecting comment reflow and formatting.",
+  "markup": {
+    "_help_bullet_char": [
+      "What character to use for bulleted lists"
+    ],
+    "bullet_char": "*",
+    "_help_enum_char": [
+      "What character to use as punctuation after numerals in an",
+      "enumerated list"
+    ],
+    "enum_char": ".",
+    "_help_first_comment_is_literal": [
+      "If comment markup is enabled, don't reflow the first comment",
+      "block in each listfile. Use this to preserve formatting of",
+      "your copyright/license statements."
+    ],
+    "first_comment_is_literal": true,
+    "_help_literal_comment_pattern": [
+      "If comment markup is enabled, don't reflow any comment block",
+      "which matches this (regex) pattern. Default is `None`",
+      "(disabled)."
+    ],
+    "literal_comment_pattern": null,
+    "_help_fence_pattern": [
+      "Regular expression to match preformat fences in comments",
+      "default= ``r'^\\s*([`~]{3}[`~]*)(.*)$'``"
+    ],
+    "fence_pattern": "^\\s*([`~]{3}[`~]*)(.*)$",
+    "_help_ruler_pattern": [
+      "Regular expression to match rulers in comments default=",
+      "``r'^\\s*[^\\w\\s]{3}.*[^\\w\\s]{3}$'``"
+    ],
+    "ruler_pattern": "^\\s*[^\\w\\s]{3}.*[^\\w\\s]{3}$",
+    "_help_explicit_trailing_pattern": [
+      "If a comment line matches starts with this pattern then it",
+      "is explicitly a trailing comment for the preceeding",
+      "argument. Default is '#<'"
+    ],
+    "explicit_trailing_pattern": "#<",
+    "_help_hashruler_min_length": [
+      "If a comment line starts with at least this many consecutive",
+      "hash characters, then don't lstrip() them off. This allows",
+      "for lazy hash rulers where the first hash char is not",
+      "separated by space"
+    ],
+    "hashruler_min_length": 10,
+    "_help_canonicalize_hashrulers": [
+      "If true, then insert a space between the first hash char and",
+      "remaining hash chars in a hash ruler, and normalize its",
+      "length to fill the column"
+    ],
+    "canonicalize_hashrulers": true,
+    "_help_enable_markup": [
+      "enable comment markup parsing and reflow"
+    ],
+    "enable_markup": true
+  },
+  "_help_lint": "Options affecting the linter",
+  "lint": {
+    "_help_disabled_codes": [
+      "a list of lint codes to disable"
+    ],
+    "disabled_codes": [],
+    "_help_function_pattern": [
+      "regular expression pattern describing valid function names"
+    ],
+    "function_pattern": "[0-9a-z_]+",
+    "_help_macro_pattern": [
+      "regular expression pattern describing valid macro names"
+    ],
+    "macro_pattern": "[0-9A-Z_]+",
+    "_help_global_var_pattern": [
+      "regular expression pattern describing valid names for",
+      "variables with global (cache) scope"
+    ],
+    "global_var_pattern": "[A-Z][0-9A-Z_]+",
+    "_help_internal_var_pattern": [
+      "regular expression pattern describing valid names for",
+      "variables with global scope (but internal semantic)"
+    ],
+    "internal_var_pattern": "_[A-Z][0-9A-Z_]+",
+    "_help_local_var_pattern": [
+      "regular expression pattern describing valid names for",
+      "variables with local scope"
+    ],
+    "local_var_pattern": "[a-z][a-z0-9_]+",
+    "_help_private_var_pattern": [
+      "regular expression pattern describing valid names for",
+      "privatedirectory variables"
+    ],
+    "private_var_pattern": "_[0-9a-z_]+",
+    "_help_public_var_pattern": [
+      "regular expression pattern describing valid names for public",
+      "directory variables"
+    ],
+    "public_var_pattern": "[A-Z][0-9A-Z_]+",
+    "_help_argument_var_pattern": [
+      "regular expression pattern describing valid names for",
+      "function/macro arguments and loop variables."
+    ],
+    "argument_var_pattern": "[a-z][a-z0-9_]+",
+    "_help_keyword_pattern": [
+      "regular expression pattern describing valid names for",
+      "keywords used in functions or macros"
+    ],
+    "keyword_pattern": "[A-Z][0-9A-Z_]+",
+    "_help_max_conditionals_custom_parser": [
+      "In the heuristic for C0201, how many conditionals to match",
+      "within a loop in before considering the loop a parser."
+    ],
+    "max_conditionals_custom_parser": 2,
+    "_help_min_statement_spacing": [
+      "Require at least this many newlines between statements"
+    ],
+    "min_statement_spacing": 1,
+    "_help_max_statement_spacing": [
+      "Require no more than this many newlines between statements"
+    ],
+    "max_statement_spacing": 2,
+    "max_returns": 6,
+    "max_branches": 12,
+    "max_arguments": 5,
+    "max_localvars": 15,
+    "max_statements": 50
+  },
+  "_help_encode": "Options affecting file encoding",
+  "encode": {
+    "_help_emit_byteorder_mark": [
+      "If true, emit the unicode byte-order mark (BOM) at the start",
+      "of the file"
+    ],
+    "emit_byteorder_mark": false,
+    "_help_input_encoding": [
+      "Specify the encoding of the input file. Defaults to utf-8"
+    ],
+    "input_encoding": "utf-8",
+    "_help_output_encoding": [
+      "Specify the encoding of the output file. Defaults to utf-8.",
+      "Note that cmake only claims to support utf-8 so be careful",
+      "when using anything else"
+    ],
+    "output_encoding": "utf-8"
+  },
+  "_help_misc": "Miscellaneous configurations options.",
+  "misc": {
+    "_help_per_command": [
+      "A dictionary containing any per-command configuration",
+      "overrides. Currently only `command_case` is supported."
+    ],
+    "per_command": {}
+  }
+}

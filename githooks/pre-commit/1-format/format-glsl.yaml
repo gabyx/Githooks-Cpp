@@ -1,0 +1,3 @@
+cmd: githooks/pre-commit/1-format/.format-glsl.sh
+image:
+  reference: githooks-cpp:1.0.0
