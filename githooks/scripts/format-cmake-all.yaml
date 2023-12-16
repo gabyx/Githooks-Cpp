@@ -1,0 +1,3 @@
+cmd: githooks/scripts/format-cmake-all.sh
+image:
+  reference: githooks-cpp:1.0.0
