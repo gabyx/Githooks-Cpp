@@ -17,8 +17,8 @@ regex=$(getGeneralCppFileRegex)
 function help() {
     printError "Usage:" \
         "  [--force]                      : Force the format." \
-        "  [--exclude-regex <regex> ]     : Exclude file with this regex." \
-        "  [--glob-pattern <pattern>]     : Regex pattern to include files." \
+        "  [--exclude <regex> ]           : Exclude file with this regex." \
+        "  [--include <pattern>]          : Regex pattern to include files." \
         "   --dir <path>                  : In which directory to format files."
 }
 
@@ -35,13 +35,13 @@ function parseArgs() {
             true
         elif [ "$prev" = "--dir" ]; then
             dir="$p"
-        elif [ "$p" = "--exclude-regex" ]; then
+        elif [ "$p" = "--exclude" ]; then
             true
-        elif [ "$prev" = "--exclude-regex" ]; then
+        elif [ "$prev" = "--exclude" ]; then
             excludeRegex="$p"
-        elif [ "$p" = "--regex-pattern" ]; then
+        elif [ "$p" = "--include" ]; then
             true
-        elif [ "$prev" = "--regex-pattern" ]; then
+        elif [ "$prev" = "--include" ]; then
             regex="$p"
         else
             printError "! Unknown argument \`$p\`"
