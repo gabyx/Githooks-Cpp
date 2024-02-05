@@ -1,21 +1,20 @@
 # syntax = docker/dockerfile:1.2
-FROM alpine:3.18 as githooks-cpp-base
+FROM alpine:3.19 as githooks-cpp-base
 LABEL name=githooks-cpp
 
 COPY configs/requirements.txt /container-setup/
 
 RUN apk add git tar curl xz bash coreutils findutils grep sed parallel && \
-    apk add python3 && \
-    python -m ensurepip && \
-    python -m pip install -r /container-setup/requirements.txt && \
-    apk add --no-cache clang16-extra-tools
+    apk add python3 py3-pip && \
+    python -m pip install --break-system-packages -r /container-setup/requirements.txt && \
+    apk add --no-cache clang17-extra-tools
 
-RUN git config --system --add safe.directory "*" 
+RUN git config --system --add safe.directory "*"
 
 VOLUME [ "/mnt/workspace" ]
 VOLUME [ "/mnt/shared" ]
 
-FROM githooks-cpp-base as githooks-cpp-user 
+FROM githooks-cpp-base as githooks-cpp-user
 ARG ROOT_ACCESS=false
 
 ARG USER_UID=1000

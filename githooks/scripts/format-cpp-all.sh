@@ -61,7 +61,7 @@ clangFormatExe=$(git config "githooks-cpp.clangFormat") || true
 clangFormatExe="${clangFormatExe:-clang-format}"
 
 if [ "$dryRun" = "false" ]; then
-    assertClangFormatVersion "12.0.0" "13.0.2" "$clangFormatExe"
+    assertClangFormatVersion "17.0.0" "18.0.0" "$clangFormatExe"
     printInfo "Formatting C++ files in dir '$dir'."
 else
     printInfo "Dry-run formatting C++ files in dir '$dir'."

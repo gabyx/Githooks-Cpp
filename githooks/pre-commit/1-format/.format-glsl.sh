@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 # shellcheck disable=SC1090,SC1091
 
-
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd)"
 ROOT_DIR="$DIR/../../.."
 . "$ROOT_DIR/githooks/common/export-staged.sh"
@@ -19,7 +18,7 @@ assertStagedFiles || die "Could not assert staged files."
 clangFormatExe=$(git config "githooks-cppcpp.clangFormat") || true
 clangFormatExe="${clangFormatExe:-clang-format}"
 
-assertClangFormatVersion "16.0.0" "16.999.999" "$clangFormatExe"
+assertClangFormatVersion "17.0.0" "18.0.0" "$clangFormatExe"
 
 printHeader "Running hook: GLSL format ..."
 
