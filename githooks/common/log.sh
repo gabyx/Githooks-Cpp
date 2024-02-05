@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-
 # shellcheck disable=SC2154,SC2086
 function _print() {
     local color="$1"
@@ -39,7 +38,7 @@ function printError() {
 
 # Print a hook header info to stderr (git hooks)
 function printHeader() {
-    _print "[0;94m" "" "githooks-cppcpp:: " "$@" >&2
+    _print "[0;94m" "" "githooks-cpp:: " "$@" >&2
     return 0
 }
 

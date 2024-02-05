@@ -28,6 +28,3 @@ parallelForFiles formatCppFile \
     "$regex" \
     "false" \
     "$clangFormatExe" || die "C++ format failed."
-
-stageFiles "$PARALLEL_EXECUTED_FILES" ||
-    printError "Could not stage formatted files."
